@@ -6,6 +6,7 @@ const initialTasks = [
     completed: false,
     priority: "high"
   },
+
   {
     id: 2,
     title: "Build project",
@@ -56,19 +57,23 @@ export default function App() {
   // ================================================================
 
   function getAllTasks(tasks) {
-    // TODO
+   return tasks;
   }
 
   function getIncompleteTasks(tasks) {
-    // TODO
+    const arr=tasks.filter(task=> task.completed===false);
+    return arr;
   }
 
   function findTaskByTitle(tasks, title) {
-    // TODO
+   const t=tasks.find(task=>task.title.includes(title));
+   
+   return t;
   }
 
   function countCompletedTasks(tasks) {
-    // TODO
+  const h=tasks.filter(task=>task.completed===true);
+  return h.length;
   }
 
   function addTask(tasks, newTask) {
