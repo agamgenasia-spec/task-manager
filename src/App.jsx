@@ -61,7 +61,7 @@ export default function App() {
   }
 
   function getIncompleteTasks(tasks) {
-    const arr=tasks.filter(task=> task.completed===false);
+    const arr=tasks.filter((task)=> task.completed===false);
     return arr;
   }
 
@@ -77,19 +77,23 @@ export default function App() {
   }
 
   function addTask(tasks, newTask) {
-    // TODO
+    const arr =[...tasks,newTask];
+   return arr;
   }
 
   function removeTask(tasks, id) {
-    // TODO
+    const arr = tasks.filter(task=> task.id!==id );
+    return arr;
   }
 
   function toggleTaskCompleted(tasks, id) {
-    // TODO
+     const arr= tasks.map(task=> task.id===id?{...task,completed:!task.completed}: task)
+     return arr;
   }
 
   function updateTaskPriority(tasks, id, newPriority) {
-    // TODO
+     const arr= tasks.map(task=> task.id===id?{...task,priority:newPriority}:task)
+      return arr;
   }
 
   // ================================================================
